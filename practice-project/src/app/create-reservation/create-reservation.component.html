@@ -1,0 +1,53 @@
+<div class="dialog-container">
+
+    <div class="dialog-title">
+        Create Reservation
+    </div>
+
+    <div class="required-form-container">
+
+        <div class="med-input-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Party Name</mat-label>
+                <input matInput placeholder="" [formControl]="form.controls.name" required>
+                <mat-error *ngIf="form.controls.name.invalid">Required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="sm-input-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Party Size</mat-label>
+                <input matInput placeholder="" [formControl]="form.controls.size" required>
+                <mat-error *ngIf="form.controls.size.invalid">Required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="med-input-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput placeholder="" [formControl]="form.controls.date" required>
+                <mat-error *ngIf="form.controls.date.invalid">Required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="med-input-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Time</mat-label>
+                <select id="select" matNativeControl required [formControl]="form.controls.time">
+                    <option *ngFor="let time of timeslots | keyvalue" [value]="time">{{time.value}}</option>
+                </select>
+                <mat-error *ngIf="form.controls.time.invalid">Required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="lg-input-container">
+        <div class="comments-container">
+            <mat-form-field class="comments-field" appearance="fill">
+                <mat-label>Comments</mat-label>
+                <textarea matInput placeholder="" [formControl]="form.controls.comments"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="button-container">
+            <button class="confirm-button" mat-raised-button color="primary" (click)="onSubmit()">Create</button>
+        </div>
+    </div>
+</div>

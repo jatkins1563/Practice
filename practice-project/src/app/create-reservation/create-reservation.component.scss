@@ -1,0 +1,68 @@
+.dialog-container {
+    max-height: 50%;
+    width: 100%;
+}
+
+.dialog-title {
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: x-large;
+}
+
+.required-form-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 50px;
+    padding: 0px 50px;
+    width: 90%;
+    height: 100px;
+    column-gap: 50px;
+}
+
+.sm-input-container {
+
+}
+
+.med-input-container {
+
+}
+
+.lg-input-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.comments-container {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5.5%;
+    margin-bottom: 100px;
+    max-height: 100px;
+    width: 400px;
+}
+
+.comments-field {
+    width: 100%;
+    max-height: 180px;
+}
+
+.mat-mdc-form-field-infix {
+
+    padding: 0px !important;
+    
+    ::ng-deep select {
+        min-width: 212px;
+        min-height: 56px;
+    }
+}
+
+.button-container {
+    padding-top: 80px;
+}
+
+.confirm-button {
+    height: 60px;
+    width: 240px;
+    background-color: rgb(29, 100, 61) !important;
+}
