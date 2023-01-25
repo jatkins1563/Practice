@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -8,14 +8,11 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DeleteReservationComponent {
 
-  @Input() reservationId: number;
-  @Output() deleteConfirmed: EventEmitter<number> = new EventEmitter();
-
-  constructor(private dialogRef: MatDialogRef<DeleteReservationComponent>
+  constructor(private dialogRef: MatDialogRef<DeleteReservationComponent>,
   ) { }
 
   confirmDelete(): void {
-    this.deleteConfirmed.emit(this.reservationId);
+    this.dialogRef.close("delete");
   }
 
   cancel(): void {

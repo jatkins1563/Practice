@@ -9,27 +9,29 @@
 </div>
 
 <div class="button-container">
-    <button class="create-button"
-    mat-raised-button
-    color="primary"
-    (click)="createReservation()">Create Reservation</button>
+    <button class="create-button" mat-raised-button color="primary" (click)="openCreateDialog()">Create
+        Reservation</button>
 </div>
-    
-    <div class="tab-group-container">
-        <mat-tab-group #tabGroup 
-    class="tabs">
-    
-    <mat-tab class="todayTab" label="Today's Reservations">
-        <app-reservation-display>
-        </app-reservation-display>
-    </mat-tab>
-    <mat-tab class="futureTab" label="Future Reservations">
-        <app-reservation-display>
-        </app-reservation-display>
-    </mat-tab>
-    <mat-tab class="pastTab" label="Past Reservations">
-        <app-reservation-display>
-        </app-reservation-display>
-    </mat-tab>
-</mat-tab-group>
+
+<div class="tab-group-container">
+    <mat-tab-group #tabGroup class="tabs">
+
+        <mat-tab class="activeTab" label="Active Reservations">
+            <app-reservation-display [dataSource]="this.localStorageService.activeReservations"
+                                     [tabIndex]="0">
+            </app-reservation-display>
+        </mat-tab>
+        <mat-tab class="fulfilledTab" label="Fulfilled Reservations">
+            <app-reservation-display [dataSource]="this.localStorageService.fulfilledReservations"
+                [showFulfillAction]="false"
+                [tabIndex]="1">
+            </app-reservation-display>
+        </mat-tab>
+        <mat-tab class="deletedTab" label="Deleted Reservations">
+            <app-reservation-display [dataSource]="this.localStorageService.deletedReservations"
+                [showFulfillAction]="false" [showDeleteAction]="false"
+                [tabIndex]="2">
+            </app-reservation-display>
+        </mat-tab>
+    </mat-tab-group>
 </div>

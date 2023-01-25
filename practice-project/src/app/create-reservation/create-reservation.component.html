@@ -6,7 +6,7 @@
 
     <div class="required-form-container">
 
-        <div class="med-input-container">
+        <div>
             <mat-form-field appearance="fill">
                 <mat-label>Party Name</mat-label>
                 <input matInput placeholder="" [formControl]="form.controls.name" required>
@@ -14,7 +14,7 @@
             </mat-form-field>
         </div>
 
-        <div class="sm-input-container">
+        <div>
             <mat-form-field appearance="fill">
                 <mat-label>Party Size</mat-label>
                 <input matInput placeholder="" [formControl]="form.controls.size" required>
@@ -22,18 +22,19 @@
             </mat-form-field>
         </div>
 
-        <div class="med-input-container">
+        <div>
             <mat-form-field appearance="fill">
                 <mat-label>Date</mat-label>
                 <input matInput placeholder="" [formControl]="form.controls.date" required>
                 <mat-error *ngIf="form.controls.date.invalid">Required</mat-error>
             </mat-form-field>
         </div>
-        <div class="med-input-container">
+        <div>
             <mat-form-field appearance="fill">
                 <mat-label>Time</mat-label>
                 <select id="select" matNativeControl required [formControl]="form.controls.time">
-                    <option *ngFor="let time of timeslots | keyvalue" [value]="time">{{time.value}}</option>
+                    <option label="Select..."></option>
+                    <option *ngFor="let time of timeSlots">{{time}}</option>
                 </select>
                 <mat-error *ngIf="form.controls.time.invalid">Required</mat-error>
             </mat-form-field>

@@ -4,9 +4,14 @@
 
 th {
     text-align: center;
-    border-left: 2pt;
-    border-left-color: rgb(29, 100, 61);
-    border-left-style: solid;
+}
+
+td {
+    text-align: center;
+}
+
+.comment-cell {
+    text-align: left;
 }
 
 .sm-column {

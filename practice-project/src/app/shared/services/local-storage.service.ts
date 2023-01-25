@@ -23,9 +23,11 @@ export class LocalStorageService {
     }
 
     StoreReservation(newReservation: Reservation): void {
+        console.log("lenghth of array", this.reservations.length);
         var existingData = JSON.parse(localStorage.getItem('reservations') || "");
 
         existingData.push({
+            id: newReservation.id,
             name: newReservation.name,
             size: newReservation.size,
             date: newReservation.date,
@@ -38,8 +40,20 @@ export class LocalStorageService {
         this.SaveChanges(existingData);
     }
 
+    DeleteReservation(resId: number): void {
+        this.reservations[resId].isDeleted = true;
+        this.SaveChanges(this.reservations);
+    }
+
+    FulfillReservation(resId: number): void {
+        this.reservations[resId].isFulfilled = true;
+        this.SaveChanges(this.reservations);
+    }
+
     SaveChanges(reservations: Reservation[]): void {
         localStorage.setItem('reservations', JSON.stringify(reservations));
+        this.PopulateData();
+        this.SortData();
     }
 
     SortData(): void {

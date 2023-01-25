@@ -20,14 +20,6 @@
     column-gap: 50px;
 }
 
-.sm-input-container {
-
-}
-
-.med-input-container {
-
-}
-
 .lg-input-container {
     display: flex;
     justify-content: space-around;
@@ -50,7 +42,7 @@
 .mat-mdc-form-field-infix {
 
     padding: 0px !important;
-    
+
     ::ng-deep select {
         min-width: 212px;
         min-height: 56px;

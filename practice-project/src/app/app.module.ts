@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { ReservationDisplayComponent } from './reservation-display/reservation-display.component';
 import { CreateReservationComponent } from './create-reservation/create-reservation.component';
 import { DeleteReservationComponent } from './delete-reservation/delete-reservation.component';
+import { LocalStorageService } from './shared/services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DeleteReservationComponent } from './delete-reservation/delete-reservat
     ReactiveFormsModule,
   ],
   providers: [
+    LocalStorageService,
      { provide: MAT_TABS_CONFIG, useValue: { animationDuration: '0ms'} }
 ],
   bootstrap: [AppComponent]

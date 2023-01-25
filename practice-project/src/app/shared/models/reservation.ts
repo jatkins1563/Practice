@@ -1,7 +1,8 @@
 export class Reservation {
+    id: number;
     name: string;
     size: number;
-    date: Date;
+    date: string;
     time: string;
     comments: string;
     isFulfilled: boolean = false;

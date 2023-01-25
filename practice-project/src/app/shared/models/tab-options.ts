@@ -1,5 +1,5 @@
 export class TabOptions {
-    today: number = 0;
-    future: number = 1;
-    past: number = 2;
+    active: number = 0;
+    fulfilled: number = 1;
+    deleted: number = 2;
 }
